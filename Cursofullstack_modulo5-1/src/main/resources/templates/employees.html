@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Curso Fullstack Modulo 5</title>
+<link href="/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+<link href="/css/bootstrap-table.css" rel="stylesheet" th:href="@{/css/bootstrap-table.css}"/>
+
+<link href="/css/globalstyle.css" rel="stylesheet"/>
+<script type="text/javascript" src="/js/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="/js/employees.js"></script>
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3>Mantención de Empleados</h3>
+			</div>
+			<p>
+			<div class="btn-group">
+				<button type="button" class="btn btn-primary btn-sml" onclick="javascript:EmployeesController('list')">Listar</button>
+				<button type="button" class="btn btn-primary btn-sml" onclick="javascript:EmployeesController('get')">Buscar</button>
+				<button type="button" class="btn btn-primary btn-sml" onclick="javascript:EmployeesController('insert')">Nuevo</button>
+				<button type="button" class="btn btn-primary btn-sml" onclick="javascript:EmployeesController('update')">Actualizar</button>
+				<button type="button" class="btn btn-primary btn-sml" onclick="javascript:EmployeesController('delete')">Eliminar</button>
+			</div>
+			<p>
+			<div class="alert alert-danger" id="msg" hidden="true">
+			</div>
+			<p>
+			<div class="input-group">
+				<span class="input-group-addon">Employee ID</span>
+				<input type="text" class="form-control" id="employee_id">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">First Name</span>
+				<input type="text" class="form-control" id="first_name">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Last Name</span>
+				<input type="text" class="form-control" id="last_name">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Email</span>
+				<input type="text" class="form-control" id="email">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Phone Number</span>
+				<input type="text" class="form-control" id="phone_number">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Hire Date</span>
+				<input type="date" class="form-control" id="hire_date">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Job ID</span>
+				<input type="text" class="form-control" id="job_id">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Salary</span>
+				<input type="number" class="form-control" id="salary" placeholder="0.00">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Commission PCT</span>
+				<input type="number" class="form-control" id="commission_pct" placeholder="0.00">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Manager ID</span>
+				<input type="text" class="form-control" id="manager_id">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Department ID</span>
+				<input type="text" class="form-control" id="department_id">
+			</div>
+		</div>
+	</div>
+
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">Cerrar</button>
+					<h4 class="modal-title">Lista de Empleados</h4>
+				</div>
+				<div class="modal-body">
+					<div class="table-responsive" style="height:100%" id="tableDivContainer">
+						<table class="table table-condensed" id="employeesTable" data-toggle="table" data-height="299">
+							<thead>
+								<tr>
+									<th data-field="employee_id">Employee ID</th>
+									<th data-field="first_name">First Name</th>
+									<th data-field="last_name">Last Name</th>
+									<th data-field="email">Email</th>
+									<th data-field="phone_number">Phone Number</th>
+									<th data-field="hire_date">Hire Date</th>
+									<th data-field="job_id">Job ID</th>
+									<th data-field="salary">Salary</th>
+									<th data-field="comission_pct">Commission PCT</th>
+									<th data-field="manager_id">Manager ID</th>
+									<th data-field="department_id">Department ID</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/js/bootstrap-table.js"></script>
+</body>
+</html>

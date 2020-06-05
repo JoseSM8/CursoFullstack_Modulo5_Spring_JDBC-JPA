@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curso fullstack Modulo 5</title>
+<link href="/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+<link href="/css/globalstyle.css" rel="stylesheet"/>
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container" style="background-color: skyblue;">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3>Curso Fullstack Jave Trainee</h3>
+				<h4>Ejemplo de aplicacion springboot</h4>
+				<h6><strong>Vista: </strong> Bootstrap - Jquery - Thymeleaf</h6>
+				<h6><strong>Controlador: </strong> Springboot Servlet</h6>
+				<h6><strong>Modelo: </strong> DAO/DTO - JDBCTempalte</h6>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/jquery-3.5.1.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.js"></script>
+</body>
+</html>
